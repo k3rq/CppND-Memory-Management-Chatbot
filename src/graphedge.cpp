@@ -6,14 +6,14 @@ GraphEdge::GraphEdge(int id)
     _id = id;
 }
 
-void GraphEdge::SetChildNode(GraphNode *childNode)
+void GraphEdge::SetChildNode(std::vector<std::shared_ptr<GraphNode>>::iterator childNode)
 {
-    _childNode = childNode;
+    _childNode = *childNode;
 }
 
-void GraphEdge::SetParentNode(GraphNode *parentNode)
+void GraphEdge::SetParentNode(std::vector<std::shared_ptr<GraphNode>>::iterator parentNode)
 {
-    _parentNode = parentNode;
+    _parentNode = *parentNode;
 }
 
 void GraphEdge::AddToken(std::string token)
