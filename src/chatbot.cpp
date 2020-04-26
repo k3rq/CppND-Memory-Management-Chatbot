@@ -127,7 +127,7 @@ void ChatBot::ReceiveMessageFromUser(std::string message)
     }
 
     // select best fitting edge to proceed along
-    std::shared_ptr<GraphNode> newNode;
+    GraphNode *newNode;
     if (levDists.size() > 0)
     {
         // sort in ascending order of Levenshtein distance (best fit is at the top)
