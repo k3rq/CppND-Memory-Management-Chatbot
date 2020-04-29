@@ -60,7 +60,6 @@ ChatBot::ChatBot(const ChatBot &source)
 ChatBot::ChatBot(ChatBot &&source)
 {
     std::cout << "ChatBot Move Constructor" << std::endl;
-
     _image = source._image;
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
@@ -154,7 +153,7 @@ void ChatBot::SetCurrentNode(GraphNode *node)
     std::mt19937 generator(int(std::time(0)));
     std::uniform_int_distribution<int> dis(0, answers.size() - 1);
     std::string answer = answers.at(dis(generator));
-
+    
     // send selected node answer to user
     _chatLogic->SendMessageToUser(answer);
 }
